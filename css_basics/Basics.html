@@ -1,0 +1,33 @@
+<!--
+Un'altro modo per poter inserire css all'interno di un file .html è tramite il tag <style> nell'head del file, oppure come attributo
+"style" nei tag in cui si vuole inserire del css.
+Non tutti gli attributi css sono supportati da tutti i browser, per controllare ciò è possibile visitare caniuse.com
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Basics of CSS</title>
+        <link rel="stylesheet" href="Basics.css"> <!--Il tag <link> nell'head del file html è essenziale per importare il file .css che modificherà lo stile della pagina.-->
+    </head>
+    <body>
+        <h1>CSS Basics</h1>
+        <p> <!--In questo esempio tutto il testo contenuto negli <span> è stato modificato con un colore di background differente.-->
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. 
+            Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
+            Donec quam <span>felis, ultricies nec, pellentesque eu, pretium quis, sem.</span> 
+            Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. 
+            In enim <span>justo</span>, rhoncus ut, imperdiet a, venenatis vitae, justo. 
+            Nullam dictum felis eu pede mollis pretium. Integer tincidunt.
+        </p>
+    </body>
+</html>
+
+<!--
+Il codice html con i diversi tag, ed il testo che contengono, vengono letti dal browser come contenitori che contengono
+altri tag creando così un'albero genealogico di diversi tag che prendono il nome di "nodi" in quello che viene chiamato "DOM".
+Per esempio, nel codice sovrastante il nodo <body> è padre del nodo <h1>, a sua volta il nodo <h1> è padre del testo "CSS Basics".
+
+Il DOM viene scansionato dal CSS che ne applica delle modifiche puramente a livello di stile, non toccando la struttura di quest'ultimo.
+(In altre parole, css non modifica il codice html, quindi il DOM, ma ne ritocca solo l'aspetto visivo).
+-->
