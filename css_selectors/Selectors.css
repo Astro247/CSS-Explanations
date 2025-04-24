@@ -1,0 +1,52 @@
+/*
+Per poter modificare più tag con le stesse proprietà è possibile creare un solo selettore formato da più tag di riferimento.
+*/
+
+h1, #test_2, .test_3 {
+    color:rgb(5, 97, 66);
+}
+
+/*
+Il simbolo "*" è utilizzato come selettore per poter scrivere dichiarazioni valire per tutti i nodi presenti nel DOM.
+Ovviamente il fatto che determinate dichiarazioni vengano applicate a tutti i nodi non significa che tutti i nodi reagiscano
+a quella dichiarazione (infatti il tag <span> non ha effetti a differenza del tag <h>).
+*/
+
+* {
+    height: 50px;
+}
+
+/*
+E' possibile generare un selettore che si riferisca ad un tag che rispetti più condizioni insieme.
+Nell'esempio sottostante è stato generato un selettore che si riferisce ad un tag che abbia come classe sia "test_2" che "test_3",
+pertanto tutti i tag che hanno come classe uno o l'altro non verranno afflitti.
+*/
+
+.test_2.test_3 {
+    background-color: rgb(91, 235, 235);
+}
+
+/*
+E' possibile anche generare un'attributo le cui dichiarazioni sono applicate qualora un tipo di tag contenga uno
+specifico attributo.
+*/
+
+a[title] { /*Questo selettore si riferisce a tutti i tag <a> che contengono l'attributo "title"*/
+    color:rgb(27, 27, 192);
+}
+
+a[title="a.html"] { /*Questo selettore, invece, si riferisce solo ai tag <a> contenenti come attributo title "a.html"*/
+    color:rgb(9, 129, 89);
+}
+
+/*
+Le pseudo classi consistono in selettori seguiti da una parola chiave, le dichiarazioni contenute nel selettore vengono applicate
+qualora la condizione di quella parola chiave viene rispettata.
+
+Nell'esempio sottostante la parola chiave "hover" fa sì che le dichiarazioni contenute nel selettore vengono rispettate qualora
+con il mouse si hoveri sopra quel link.
+*/
+
+a:hover {
+    color: red;
+  }
