@@ -1,0 +1,27 @@
+/*
+Per potersi riferire ai tag di un file .html, da un file .css esterno oppure all'interno del tag <style> nel file .html, è possibile:
+
+- Utilizzare un tag generico, ma così la modifica verrà evvettuata a tutti i tag nel file html senza un'id oppure un'attributo classe.
+- Mettere un "." seguito dal nome della classe dato ad uno o più tag per poterli modificare.
+- Mettere un "#" seguito dal nome dell'id assegnato ad un tag che, essendo l'id un attributo univoco, modifica solo quel tag. 
+*/
+
+h1 {
+    background-color: rgb(23, 116, 116);
+    padding: 10px;
+}
+
+.test-2 { 
+    background-color: rgb(113, 28, 146);
+    padding: 20px;
+}
+
+#test-3 { 
+    background-color: rgb(34, 119, 67);
+    padding: 30px;
+}
+
+/*
+Un'elemento CSS è detto "selettore", ossia quel tag di riferimento del file .html che si vuole modificare, quest'ultimo contiene
+una serie di "dichiarazioni" che seguono tutte il pattern: "proprietà: valore".
+*/
