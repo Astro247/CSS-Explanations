@@ -1,0 +1,51 @@
+/*
+Il codice scritto in CSS viene letto a cascata (quindi dall'alto verso il basso), e come conseguenza del DOM alcune dichiarazioni, come "color",
+poste su un selettore padre vengono ereditate dal nodo figlio, altre dichiarazioni invece, come height, non vengono ereditate.
+
+Esistono tre valori attribuibili a delle proprietà nel contesto dell'ereditarietà:
+1) "inhert", fa sì che quella specifica proprietà di quel nodo venga attribuita dal nodo padre.
+2) "initial", restaura il valore di una specifica proprietà al suo valore di default.
+3) "unset", se una proprietà è ereditabile, allora viene ereditata. Se non è ereditabile allora la resetta al suo valore di default.
+
+La dichiarazione "all: unset" è utile per utilizzare "unset" su tutte le dichiarazioni fatte su un selettore.
+
+Siccome il codice viene letto a cascata, viene letto fra due selettori con lo stesso livello di importanza, con una stessa dichiarazione,
+il selettore "più in basso" nel codice, poiché viene letto per ultimo.
+
+Il "grado di importanza" viene calcolato in base a quanto specificatamente viene inserito un selettore: se si tratta di un selettore che si
+riferisce ad un tag qualunque allora questo è meno importante di un selettore che si riferisce ad una classe, che a sua volta è meno importante
+di un selettore che si riferisce ad un id.
+
+Il livello di importanza più alto dopo l'id è la scrittura del codice css come attributo del tag, con il modificatore di priorità "!important"
+con il livello d'importanza più alto in assoluto (quindi che batte tutti gli altri selettori).
+*/
+
+div {     
+    color:rgb(72, 189, 189);
+    background-color: rgb(21, 77, 58);
+}
+
+h1 {
+    color:brown;
+}
+
+.class_test{
+    color:blue !important;
+}
+
+#id_test{
+    color:blueviolet;
+}
+
+/*
+Nell'esempio sovrastante, il codice viene letto dall'alto verso il basso, quindi:
+il selettore div modifica il tag div, che a sua volta per ereditarietà modifica l'h1 al suo interno con lo stesso valore della stessa priorità
+"color". Avendo dato il colore marrone al selettore h1, essendo più specifico, questo ha più priorità rispetto all'ereditarietà del "div".
+
+Il terzo selettore è ancora più specifico del precedente poiché si riferisce a tutti i tag che hanno la classe ".class_test", il quarto
+selettore è ancora più specifico del precedente poiché si riferisce all'unico tag con l'id "id_test" e infine, nel codice html, è
+presente in quello stesso tag un attributo style che è ancora più specifico, che quindi avrebbe la priorità su tutti gli altri.
+
+Avendo però inserito il modificatore di priorità "!important" nel terzo selettore, quel selettore ha acquisito priorità assoluta 
+su tutti gli altri riguardo la proprietà color.
+*/
