@@ -1,0 +1,49 @@
+/*
+I selettori che si riferiscono a nodi di tipo "block", quindi nodi che occupano tutto lo spazio orizzontale disponibile e vanno
+a capo automaticamente, posseggono proprietà che funzionano senza problemi, come height, width, padding, margin e border:
+
+- height = modifica lo spazio occupato dal nodo in verticale.
+- width = modifica lo spazio occupato dal nodo in orizzontale.
+- padding = se inserito senza ulteriori specifiche (quindi senza mettere -left, -right, -bottom o -top), genera uno spazio orizzontale e verticale fra il contenuto del tag e il suo bordo.
+- margin = anche in questo caso se non specificata la direzione, margin genera uno spazio fra il bordo del tag e lo spazio esterno.
+- border = genera una linea di contorno al bordo del nodo.
+
+Per i selettori che si riferiscono a nodi di tipo "inline", invece, che occupano solo lo spazio strettamente necessario, le proprietà
+height e width non hanno alcun effetto, mentre la proprietà padding ha effetto ma solo in orizzontale, qualora si volesse usare
+in verticale infatti lo spazio viene comunque generato, ma la posizione verticale del nodo non si muove minimamente,
+stesso discorso per la proprietà margin.
+*/
+
+h1 {
+    background-color: aqua;
+    height: 100px; /*Modifica lo spazio utilizzato in verticale di 100 pixel.*/
+    width:500px; /*Modifica lo spazio utilizzato in orizzontale di 500 pixel.*/
+    padding: 100px; /*Genera uno spazio in tutte le direzioni di 100 pixel fra il contenuto del tag <h1> e il suo bordo.*/
+    border: 5px solid red;
+}
+
+span {
+    background-color:rgb(120, 120, 236);
+    height: 100px;
+    width:500px;
+    padding: 100px; /*Genera uno spazio di 100 pixel fra il contenuto del tag <span> e il suo bordo, ma questo spazio è visibile solo in orizzontale, in quanto in verticale va in conflitto con gli altri nodi.*/
+    margin: 100px; /*Genera uno spaziosolo in orizzontale fra il bordo del tag e lo spazio esterno.*/
+    border: 2px solid red;
+}
+
+h2 {
+    background-color: rgb(130, 92, 218);
+    margin: 100px; /*Anche se dal risultato non sembra, margin in questo caso ha generato uno spazio anche in verticale di 100 pixel, ma quello stesso spazio è occupato dal padding dello <span>*/
+}
+
+/*
+Di default, le proprietà "width" e "height" non modificano il tag a cui si riferisce il selettore, ma il suo content (quindi ciò che
+è contenuto in quel tag), rendendo quindi le dimensioni del box, ossia dello spazio occupato da quel nodo in totale, uguale alla
+somma di tutti i pixel utilizzati in orizzontale e verticale.
+
+Per esempio il selettore sovrastante h1 in orizzontale occupa 500 pixel di width + 100 pixel di padding + 5 pixel di border,
+stesso discorso per lo spazio verticale.
+
+Per far sì che width e height si riferiscano alla dimensione della box e non del content è necessario introdurre la dichiarazione
+"box-sizing: border-box".
+*/
