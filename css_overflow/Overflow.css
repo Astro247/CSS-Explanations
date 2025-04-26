@@ -1,0 +1,27 @@
+/*
+Per evitare che un testo troppo lungo fuoriesca da una box di dimensioni prestabilite, in questo caso 300x300 pixel,
+esiste una proprietà detta "overflow", che associata al valore "scroll" aggiunge una scrollbar al box per visualizzare
+tutto il testo senza tagliarlo.
+
+Essendo che la proprietà overflow impostata a scroll gestisce sia lo scroll nell'asse x che nell'asse y, e nell'asse x non
+è utilizzato quasi mai lo scroll, è buono specificare l'asse in cui deve essere presente lo scroll.
+
+Nonostante il problema dell'overflow sia stato sistemato in maggioranza, di default il testo tende a tagliarsi, anche
+in mezzo ad una parola, tutte le volte che deve andare a capo, il che risulta fastidioso. Pertanto per risolvere esiste
+una  proprietà detta "word-break" che, se impostata a "keep-all" non taglia mai nessuna parola per mandare a capo.
+
+Questa proprietà comoda per non tagliare le parole però potrebbe generare problemi di overflow, qualora infatti il testo
+sulla stessa riga sia troppo lungo, il comportamento di keep-all potrebbe generare un overflow orizzontale. Per risolvere
+a questo problema esista la proprietà "overflow-wrap", se impostata a "break-word" taglia il testo se strettamente
+necessario per evitare problemi di overflow.
+*/
+
+p {
+    height: 300px;
+    width: 300px;
+    border: solid red;
+
+    overflow-y: scroll; /*Aggiunge una scrollbar verticale*/
+    word-break: keep-all; /*Non taglia mai le parole, mandandole a capo per intere se lo spazio finisce su una riga*/
+    overflow-wrap: break-word; /*Taglia le parole solo se strettamente necessario per evitare problemi di overflow*/
+}
