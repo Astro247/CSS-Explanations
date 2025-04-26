@@ -1,0 +1,74 @@
+/*
+Il background di una box può assumere due tipi di colori diversi:
+
+- Un colore rgb con la proprietà "background-color". 
+- Una gamma di colori, o gradiente, con il sito cssgradient.io.
+
+Alternativamente è possibile importare un'immagine di background con la proprietà "background-image" con valore "url()"
+con all'interno delle parentesi la path dell'immagine.
+
+Una volta inserita l'immagine è possibile modificarne la grandezza all'interno del box con la proprietà "background-size"
+che riempie tutto lo spazio disponibile nel box con la stessa immagine ripetuta qualora si inserisca un numero specifico di pixel.
+Altrimenti è possibile inserire il valore "contain" per far sì che l'immagine non venga ripetuta e occupi tutto lo spazio del box.
+
+Per far sì che  l'immagine  non occupi tutto lo spazio disponibile e rispetti una grandezza di pixel è possibile utilizzare
+la proprietà "background-repeat" impostata a "no-repeat", successivamente la posizione della singola immagine, che di default è in
+alto a sinistra, è modificabile utilizzando la proprietà "background-position".
+
+Per evitare che, qualora il box sia il body della pagina, scrollando la pagina l'immagine si muovi a sua volta è possibile
+utilizzare la proprietà "background-attachment" impostata a "fixed".
+
+*/
+
+.first_box {
+    /*Genera un blocco di 500 pixel per 500 pixel*/
+    height: 500px;
+    width: 500px;
+
+    border: solid 5px;
+    border-color: rgb(2, 156, 92);
+
+    background-color: aqua; /*Da un colore rgb al background*/
+    background-image: url(image/dragon_ball_image.png); /*Importa l'immagine e la usa come background*/
+    background-size: 50px; /*Imposta lo spazio occupato da una singola immagine di background a 50px*/
+}
+
+.second_box {
+    height: 500px;
+    width: 500px;
+
+    border: solid 5px;
+    border-color: rgb(156, 2, 2);
+
+    background-color: aquamarine;
+
+    background-image: url(image/dragon_ball_image.png);
+    background-size: 50px;
+
+    background-repeat: no-repeat; /*Fa sì che l'immagine non si ripeti per tutto il box, ma ce ne sia solo una*/
+    background-position-x: center; /*Sposta l'immagine nell'asse x centrale del box*/
+    background-position-y: bottom; /*Sposta l'immagine nell'asse y in basso del box*/
+}
+
+.third_box {
+    height: 500px;
+    width: 500px;
+
+    border: solid 5px;
+    border-color: rgb(62, 48, 194);
+    border-style:groove; /*Modifica lo stile della linea di contorno*/
+    border-radius: 30px; /*Rende la linea di contorno con le punte arrotondate*/
+
+    /*Imposta un gradiente di colori di background del box*/
+    background: #70c4e6;
+    background: linear-gradient(90deg, rgba(112, 196, 230, 1) 0%, rgba(25, 59, 49, 1) 43%, rgba(24, 56, 44, 1) 79%, rgba(237, 221, 83, 1) 100%);
+}
+
+body {
+    background-image: url(image/vegeta.jpg);
+    background-repeat: no-repeat;
+
+    background-color: black;
+    background-attachment: fixed; /*Rende l'immagine immobile, non afflitta dallo scroll*/
+    background-position-x: right;
+}
