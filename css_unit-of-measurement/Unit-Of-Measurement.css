@@ -1,0 +1,43 @@
+/*
+Come unità di misura, un 'em' corrisponde alla quantità di pixel pari al valore corrente del font-size. 
+Poiché il font-size è una proprietà ereditabile, se un nodo ha un font-size definito esplicitamente, i valori 
+in em, per qualsiasi proprietà che misura lunghezze (come per esempio padding, width, ecc.), vengono calcolati in base a quel valore. 
+Se invece l'elemento non ha un font-size proprio, il valore in em verrà ereditato dal font-size del suo elemento genitore.
+
+A differenza di 'em', il 'rem' si riferisce al numero di pixel attribuiti al font-size del tag <html>.
+*/
+
+.first_div {
+    background-color: bisque;
+    font-size: 50px;
+    height: 300px;
+}
+
+.first_p {
+    background-color: aquamarine;
+    width: 5em; /*Un 'em' in questo caso equivale a 50px, poiché è stato ereditato dal nodo genitore 'div'*/
+}
+
+.second_p  {
+    background-color: rgb(125, 125, 209);
+    width: 10rem; /*Un 'rem' in questo caso sono 30px, poiché è stato ereditato dal tag <html>*/
+}
+
+/*
+Se come valore di una proprietà è utilizzata una percentuale, quest'ultima si riferisce al valore della stessa proprietà presente
+nel nodo genitore.
+*/
+
+.second_div{
+    background-color: salmon;
+    height: 50px;
+    width: 50%; /*La width di questo <div> è il 50% della width del body, che, occupando tutto lo spazio orizzontale, ne consegue che questo div occupa la metà dello spazio orizzontale.*/
+}
+
+.third_p {
+    background-color: green;
+    color:beige;
+    font-size: 30px;
+    height: 50px;
+    width: 30%; /*La width di questo <p> è il 30% della width del suo nodo genitore, ossia di <div>*/
+}
