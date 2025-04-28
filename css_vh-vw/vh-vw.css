@@ -1,0 +1,27 @@
+/*
+Le unità di misura "vh" e "vw" sono relative alle dimensioni del viewport, quindi cambiano in base al dispositivo in utilizzo:
+
+- vh sta per "viewport height" e 1 vh equivale all'1% dell'altezza del viewport.
+- vw sta per "viewport width" e, similmente a vh, 1 vw equivale all'1% della lunghezza del viewport.
+
+Anche se il body, nell'esempio sottostante, è stato modificato con un'altezza di 2000 pixel, ciò non significa che il div, con una
+height pari al 50% della viewport, equivale a 1000 pixel, poiché, appunto, le unità vw e vh fanno esclusivamente riferimento
+alle dimensioni del viewport, non ad un nodo particolare.
+*/
+
+body{
+    height: 2000px;
+    width: 800px;
+}
+
+div {
+    height: 50vh; /*L'altezza di questo div è il 50% dell'altezza del viewport*/
+    width: 50vw; /*La sua lunghezza invece è il 50% quella del viewport*/
+    border: solid gray;
+    border-radius: 30px;
+}
+
+p {
+    font-size: 5vw; /*Il font-size è il 5% della lunghezza del viewport*/
+}
+
