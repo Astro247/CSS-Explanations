@@ -1,0 +1,28 @@
+body{
+    font-family: "Tagesschrift", system-ui;
+}
+
+table {
+    table-layout: fixed; /*La lunghezza di tutte le celle nella tabella si adatta alla lunghezza delle celle della prima riga della tabella, gestendo i problemi di overflow delle altre celle mandando a capo il testo.*/
+    width: 50%;
+    margin-left: 1rem;
+    border-collapse: collapse;
+
+    background-color: rgb(112, 111, 111);
+    color: white;
+}
+
+th,td {
+    padding: 1rem;
+    border: solid black;
+}
+
+th {
+    font-size: 1.5rem;
+    color:cadetblue;
+}
+
+td {
+    text-align: center;
+}
+
