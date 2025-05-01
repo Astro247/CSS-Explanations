@@ -1,0 +1,42 @@
+/*
+Esistono due categorie di modifica testo in css: La modifica del carattere (quindi color, font-size ecc..) e la modifica
+del layout del testo (quindi text-alignment, word-spacing ecc..).
+
+font-family modifica il tipo di carattere del testo. I font disponibili possono variare da un sistema operativo all'altro, ma esistono 
+alcuni caratteri comunemente supportati dalla maggior parte dei sistemi, detti 'web safe fonts'.
+Ogni font appartiene a una famiglia generica (come monospace, sans-serif, ecc.).
+Con la proprietà font-family è possibile indicare più font separati da virgole: il browser cercherà di usare il primo disponibile 
+nell'ordine indicato; se non trova il primo, passerà al secondo e così via, fino ad arrivare a una famiglia generica di riserva.
+*/
+
+h1 {
+    color: red; /*La proprietà 'color' modifica il colore del carattere.*/
+    text-align: center; /*'text-align' modifica la posizione del testo nel box.*/
+    letter-spacing: 5px; /*'letter-spacing' modifica la distanza fra un carattere all'altro.*/
+    word-spacing: 5px; /*'word-spacing' modifica la distanza fra una parola e l'altra.*/
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+/* Con la proprietà 'font-family' stabiliamo il font da applicare al testo. 
+   Il browser proverà prima con 'Arial', se non disponibile userà 'Helvetica', 
+   e in mancanza di entrambi ricorrerà a un font generico 'sans-serif' fornito dal sistema. */
+}
+
+p {
+    font-size: 2rem; /*La proprietà 'font-size' modifica la grandezza del font.*/
+    font-style: italic; /*'font-style' modifica lo stile del font.*/
+    font-weight: 800; /*'font-weight' modifica il livello di grassetto del testo, ha diversi livelli di grassetto.*/
+    text-transform: uppercase; /*'text-transform' trasforma il testo senza dover modificare necessariamente il contenuto manualmente.*/
+    text-decoration: underline; /*'text-decoration' serve ad aggiungere effetti al testo.*/
+    line-height: 2.5rem; /*'line-height' modifica la distanza fra una riga all'altra.*/
+}
+
+p {
+    text-shadow: 3px 3px 5px red;
+    /* La proprietà 'text-shadow' aggiunge un'ombra al testo e prende 4 valori:
+        - La distanza dell'ombra dalla lettera in orizzontale.
+        - La distanza dell'ombra dalla lettera in verticale.
+        - Il grado di blur dell'ombra (ha un'unità di misura perché indica quanto si deve espandere nello spazio, cioè il livello di blur.).
+        - Il colore dell'ombra. */
+}
