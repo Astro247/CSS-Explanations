@@ -1,0 +1,35 @@
+/*
+E' buona norma evitare di utilizzare alcune proprietà delle unordered lists, come list-style, per le ordered lists.
+Sia le ordered lists che le unordered lists dispongono di "bullets", ossia di ciò che identifica ogni riga (un pallino,
+un quadratino, un numero ecc.).
+*/
+
+ul {
+    list-style-type: square; /*Questa proprietà modifica il bullet della lista.*/
+    /*E' buona norma evitare di utilizzare valori ddella list-style-type come "square" per le ordered lists, viceversa per le unordered lists.*/
+}
+
+ul, ol {
+    list-style-position: outside;
+    /*Questa proprietà, specifica se i bullet fanno parte del contenuto oppure no. In questo caso con il valore "outside"
+    è stato impostato che i bullet sono esterni al contenuto.*/
+}
+
+ul li, ol li {
+    background-color: blueviolet;
+    /*Dato che la list-style-position è impostata ad outside, il background color dell'li non comprende anche i bullet.*/
+}
+
+/*
+Per poter aggiungere dei bullets modificati si può utilizzare il metodo sottostante:
+(Non sono veri e propri bullets, ma immagini ridimensionate nel content).
+*/
+
+.db li {
+    padding-left: 2rem; /*Genera un padding fra il testo e l'immagine*/
+    background-image: url(Image/dragon_ball_image.png); /*Inporta l'immagine*/
+    background-size: 1rem 1rem; /*Ridimensiona l'immagine*/
+    background-position: 0 0; /*Posiziona l'immagine in posizione x=0 y=0 nel box*/
+    background-repeat: no-repeat; /*Evita che l'immagine si ripeti*/
+    list-style-type: none; /*Elimina i bullets originari*/
+}
