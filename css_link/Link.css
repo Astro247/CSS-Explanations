@@ -1,0 +1,23 @@
+/*
+- :link modifica il colore del link fino a quando quest'ultimo non viene visitato (quindi fino a quando il link non viene premuto)
+- :visited modifica il colore del link dopo che si ha visitato il link (quindi dopo che si ha premuto sul link).
+- :hover cambia temporaneamente il colore del link mentre si hovera sul link.
+- :active cambia temporaneamente il colore del link mentre si sta premendo sul link.
+*/
+
+  a:link {
+    color: blue; /*Il link non visitato ha il colore blue di default*/
+  }
+  
+  a:visited {
+    color: purple; /*Una volta che il link è stato aperto il colore cambia a viola*/
+  }
+  
+  a:hover {
+    color: red; /*Mentre si hovera sul link il colore diventa rosso*/
+  }
+  
+  a:active {
+    color: orange; /*Mentre si preme sul link il colore diventa arancione*/
+  }
+  
