@@ -1,0 +1,53 @@
+/*
+Impostare un nodo come "flex" significa rendere i suoi nodi figli degli elementi flex, dando quindi più controllo sulla posizione di questi elementi 
+nella pagina.
+*/
+
+h1 {
+    background-color: rgb(78, 201, 201);     
+    text-align: center;
+    font-size: 5rem;
+
+    border: solid 5px;
+    border-color: rgb(76, 158, 131);
+    border-radius: 1rem;
+
+    margin-bottom: 5px;
+    margin-top: 5px
+}
+
+.box {
+    display: flex; /*Questa proprietà fa sì che tutti i nodi figli di questo nodo siano elementi flex*/
+    flex-direction: row;  /*Con questa proprietà, gli elementi flex si dispongono in orizzontale (possono essere disposti in verticale con il valore "column" o volendo in reverse con "column-reverse" oppure "row-reverse")*/
+    flex-wrap: wrap; /*Questa proprietà fa sì che se gli elementi flex generino un overflow della width del nodo genitore, in questo caso .box, allora vadano a capo.*/
+    justify-content: space-evenly; /*Questa proprietà dispone gli elementi flex in posizioni specifiche nel nodo genitore, in questo caso il valore "space-evenly" fa sì che tutti gli elementi flex siano tutti alla stessa distanza fra loro, il valore "space-between" non avrebbe tenuto conto degli spazi ai margini del box.*/
+    align-items: center; /*La proprietà "align-items", come dice il nome, allinea gli elementi flex per il valore passatogli (in questo caso al centro del box genitore).*/
+}
+
+.box-item h2 {
+    margin-top: 5px;
+}
+
+.box-item {
+    background-color: rgb(36, 194, 141);
+    padding: 1rem;
+    margin: 5px;
+    flex: 1; /*Questa proprietà prende come valore una lunghezza oppure un numero adimensionale, entrambi si riferiscono alla width dell'elemento flex (in questo caso il selettore è una classe che comprende tutti gli elementi flex, quindi scrivere "flex: 1" significa dire che ogni elemento flex occupa 1/3 (in questo caso un terzo perché gli elementi flex totali sono 3) della lunghezza del nodo genitore)*/
+
+    border: solid 5px;
+    border-color: rgb(76, 158, 131);
+    border-radius: 1rem;
+}
+
+#div1{
+    order: 1;  /*Questa proprietà assegna, come dice il nome, un'ordine agli elementi flex*/
+}
+
+#div2{
+    order: 3;
+}
+
+#div3{
+    order: 2;
+}
+
