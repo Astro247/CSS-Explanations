@@ -1,0 +1,59 @@
+/*
+La proprietà "position" in CSS permette, come dice il nome, di modificare il comportamento riguardante la posizione
+dei tag dipendentemente dal valore assegnato alla proprietà:
+
+- static: Comportamento normale, i tag non rispondono ai comandi "top", "bottom", "right" e "left", impostare un position "static" equivale a lasciare il comportamento di default.
+- relative: I tag rispondono ai comandi "top", "bottom" ecc.. e si spostano partendo dalla loro posizione di default.
+- absolute: Viene considerato come un nuovo elemento, si sposta in base al suo nodo genitore.
+- fixed: Rende un'elemento appiccicato a tutta la viewport height.
+- sticky: Fa sì che un'elemento rimanga nella sua posizione di default fino ad un certo punto, per poi comportarsi come un fixed.
+*/
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 200vh;
+}
+
+.box-element {
+    background-color: rgb(143, 72, 64);
+    border: solid 5px;
+    border-color: salmon;
+    border-radius: 1rem;
+    height: 5rem;
+    width: 50rem;
+    margin-bottom: 1rem;
+}
+
+.title {
+    text-align: center;
+}
+
+#div-one {
+    position: static;
+    top: 1rem;
+    left: 1rem;
+}
+
+#div-two {
+    position: relative;
+    left: 2rem;
+}
+
+#div-three {
+    position: absolute;
+    left: 3rem;
+}
+
+#div-four {
+    position: fixed;
+    right: 3rem;
+    top: 2rem;
+}
+
+#div-five {
+    position: sticky;
+    top: 2rem;
+}
+
