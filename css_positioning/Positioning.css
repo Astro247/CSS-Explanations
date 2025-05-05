@@ -4,7 +4,7 @@ dei tag dipendentemente dal valore assegnato alla proprietà:
 
 - static: Comportamento normale, i tag non rispondono ai comandi "top", "bottom", "right" e "left", impostare un position "static" equivale a lasciare il comportamento di default.
 - relative: I tag rispondono ai comandi "top", "bottom" ecc.. e si spostano partendo dalla loro posizione di default.
-- absolute: Viene considerato come un nuovo elemento, si sposta in base al suo nodo genitore.
+- absolute: Viene considerato come un nuovo elemento, è relativo al primo parent che possiede un position relative, altrimenti si accolla al nodo <html>
 - fixed: Rende un'elemento appiccicato a tutta la viewport height.
 - sticky: Fa sì che un'elemento rimanga nella sua posizione di default fino ad un certo punto, per poi comportarsi come un fixed.
 */
@@ -31,29 +31,28 @@ body {
 }
 
 #div-one {
-    position: static;
+    position: static; /*Questo div rimane nella sua posizione di default*/
     top: 1rem;
     left: 1rem;
 }
 
 #div-two {
-    position: relative;
-    left: 2rem;
+    position: relative; /*Questo div è spostabile in base alla sua posizione di default*/
+    right: 2rem; /*Genera una specie di margin-right di 2 rem dalla sua posizione di default*/
 }
 
 #div-three {
-    position: absolute;
-    left: 3rem;
+    position: absolute; /*Questo div è relativo al primo parent con un position relative, in questo caso, essendo che non ci sono parent relative, è legato al tag <html>*/
+    left: 3rem; /*Genera un margin-left di 3 rem*/
 }
 
 #div-four {
-    position: fixed;
+    position: fixed; /*Rende questo div appiccicato al viewport in una posizione specifica*/
     right: 3rem;
     top: 2rem;
 }
 
 #div-five {
-    position: sticky;
+    position: sticky; /*Questo div rimane nella sua posizione di default, per poi assumere un comportamento "fixed" quando la distanza fra il bordo del div e il margine della pagina alto è 2 rem*/
     top: 2rem;
 }
-
