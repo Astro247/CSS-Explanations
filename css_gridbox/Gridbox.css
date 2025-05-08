@@ -12,12 +12,12 @@ body {
 }
 
 .container {
-    background-color: rgb(73, 72, 72);
+    background-color: rgb(172, 172, 172);
     height: 35rem;
-    width: 29rem;
+    width: 30rem;
     border: solid;
     border-color: black;
-    border-radius: 1rem;
+    border-radius: 1rem;    
     padding: 1.5rem;
     box-shadow: 5px 5px 15px black; /*Viene generata un'ombra sul retro del blocco div, i quattro valori rappresentano: posizione orizzontale dell'ombra, posizione verticale dell'ombra, solidità dell'ombra e colore dell'ombra.*/
 
@@ -28,15 +28,20 @@ body {
 }
 
 .buttons, #entry {
+    width: 100%;
     font-size: 2rem;
-    border: solid 2px; 
-    border-color: black;
+    border: none;
     border-radius: 10px;
-    background-color: rgb(226, 225, 225);
+    background-color: rgb(78, 78, 78);
+    color: white;
 }
 
 .buttons {
     cursor: pointer;
+}
+
+.buttons:active {
+    background-color: gray;
 }
 
 #entry {
