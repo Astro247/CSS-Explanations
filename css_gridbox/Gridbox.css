@@ -22,12 +22,12 @@ body {
     box-shadow: 5px 5px 15px black; /*Viene generata un'ombra sul retro del blocco div, i quattro valori rappresentano: posizione orizzontale dell'ombra, posizione verticale dell'ombra, solidità dell'ombra e colore dell'ombra.*/
 
     display: grid; /*I figli di ".container" diventano elementi grid.*/
-    grid-template-columns: repeat(4, 7rem); /*Vengono create 4 colonne ognuna con una width di 7rem.*/
+    grid-template-columns: repeat(4, 1fr); /*Vengono create 4 colonne ognuna con una width di 1fr*/
     grid-template-rows: repeat(4, 7rem); /*Vengono create 4 righe ognuna con una height di 7rem.*/
     gap: 5px; /*Fra ogni cella c'è un gap di 5 pixel.*/
 }
 
-.buttons, #entry {
+button, #entry {
     width: 100%;
     font-size: 2rem;
     border: none;
@@ -36,11 +36,11 @@ body {
     color: white;
 }
 
-.buttons {
+button {
     cursor: pointer;
 }
 
-.buttons:active {
+button:active {
     background-color: gray;
 }
 
