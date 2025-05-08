@@ -1,0 +1,52 @@
+/*
+Il layout di tipo grid è estremamente utile per semplificare il lavoro nella disposizione di tags in due dimensioni, a differenza del flex che si limita ad una dimensione.
+(In altre parole il grid è molto efficiente per una disposizione semplice degli elementi sia in verticale che orizzontale, mentre flex si limita ad una disposizione orizzontale)
+*/
+
+body {
+    display: flex; /*Il figlio del body diventa un'elemento flex.*/
+    height: 100vh; /*Essendo il figlio un'elemento di tipo block, occupa di default tutto lo spazio orizzontale, con questa dichiarazione è stato fatto sì che occupì anche tutta la viewport height.*/
+    justify-content: center; /*Il div viene messo al centro dell'asse x del suo box.*/
+    align-items: center; /*Con questa dichiarazione invece, il div viene messo al centro dell'asse y del suo box.*/
+    background-color: rgb(59, 59, 59);
+}
+
+.container {
+    background-color: rgb(73, 72, 72);
+    height: 35rem;
+    width: 29rem;
+    border: solid;
+    border-color: black;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 5px 5px 15px black; /*Viene generata un'ombra sul retro del blocco div, i quattro valori rappresentano: posizione orizzontale dell'ombra, posizione verticale dell'ombra, solidità dell'ombra e colore dell'ombra.*/
+
+    display: grid; /*I figli di ".container" diventano elementi grid.*/
+    grid-template-columns: repeat(4, 7rem); /*Vengono create 4 colonne ognuna con una width di 7rem.*/
+    grid-template-rows: repeat(4, 7rem); /*Vengono create 4 righe ognuna con una height di 7rem.*/
+    gap: 5px; /*Fra ogni cella c'è un gap di 5 pixel.*/
+}
+
+.buttons, #entry {
+    font-size: 2rem;
+    border: solid 2px; 
+    border-color: black;
+    border-radius: 10px;
+    background-color: rgb(226, 225, 225);
+}
+
+.buttons {
+    cursor: pointer;
+}
+
+#entry {
+    grid-column: 1/5; /*#entry occupa una width specifica che va dalla prima colonna all'ultima (anche se sono presenti 4 colonne, per indicare l'ultima colonna è necessario mettere un overflow di +1)*/
+}
+
+#entry:focus {
+    outline: none;
+}
+
+#button-equal {
+    grid-column: 3/5; /*#button-equal occupa una width determinata che va dalla terza colonna all'ultima.*/ 
+}
