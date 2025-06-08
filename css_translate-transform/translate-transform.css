@@ -1,0 +1,45 @@
+/*
+La proprietà "transition", come suggerisce il nome, permette di animare in modo fluido il passaggio 
+di un elemento HTML da uno stato CSS a un altro.
+
+Si compone di quattro sotto-proprietà principali:
+
+- transition-property: indica quale proprietà CSS verrà animata
+- transition-duration: definisce la durata della transizione
+- transition-timing-function: specifica il tipo di animazione (ad esempio, "ease" è il più comune)
+- transition-delay: imposta un ritardo prima dell’inizio della transizione
+
+Queste proprietà possono essere scritte singolarmente oppure combinate in una singola riga per risparmiare spazio nel codice.
+
+Attenzione: se nel selettore scrivi più righe `transition`, il browser considererà solo l'ultima e ignorerà le precedenti.  
+Per applicare transizioni a più proprietà contemporaneamente, scrivile in una sola riga separandole con una virgola.
+
+Infine, la proprietà `transform` consente di modificare graficamente un elemento HTML, ad esempio ruotandolo (`rotate`), 
+scalandolo (`scale`) o spostandolo (`translate`), spesso in risposta a pseudo-classi come `:hover`.
+*/
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    align-items: center;
+    justify-content: center;
+    gap: 10rem;
+}
+div {
+    width: 30rem;
+    height: 15rem;
+    background-color: rgb(131, 0, 0);
+
+    /*transition-property: transform; 
+    transition-duration: 1s;
+    transition-timing-function: ease;
+    transition-delay: 0s*/
+
+    transition: transform 1s ease 1s, width 1s ease 0s; /*Le proprietà "transform" e "width" subiscono un'animazione "ease" che dura un secondo, la "width" senza alcun ritardo, mentre il "transform" con 1 secondo di ritardo.*/
+}
+div:hover {
+    transform: rotate(45deg);
+    width: 40rem;
+}
