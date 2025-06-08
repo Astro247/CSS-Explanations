@@ -38,6 +38,8 @@ div {
     transition-delay: 0s*/
 
     transition: transform 1s ease 1s, width 1s ease 0s; /*Le proprietà "transform" e "width" subiscono un'animazione "ease" che dura un secondo, la "width" senza alcun ritardo, mentre il "transform" con 1 secondo di ritardo.*/
+    /*Se tutte le proprietà hanno solo la transition-property diversa, mentre il resto è uguale, è possibile selezionare tutte le transition-property con "all"*/
+
 }
 div:hover {
     transform: rotate(45deg);
